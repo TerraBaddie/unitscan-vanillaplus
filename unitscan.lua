@@ -5,7 +5,7 @@ unitscan:RegisterEvent'VARIABLES_LOADED'
 
 local BROWN = {.7, .15, .05}
 local YELLOW = {1, 1, .15}
-local CHECK_INTERVAL = .1
+local CHECK_INTERVAL = 15.0
 
 unitscan_targets = {}
 
@@ -26,7 +26,6 @@ end
 function unitscan.check_for_targets()
 	for name, _ in unitscan_targets do
 		if unitscan.target(name) then
-			unitscan.toggle_target(name)
 			unitscan.play_sound()
 			unitscan.flash.animation:Play()
 			unitscan.button:set_target()
@@ -329,13 +328,48 @@ end
 	
 SLASH_UNITSCAN1 = '/unitscan'
 function SlashCmdList.UNITSCAN(parameter)
-	local _, _, name = strfind(parameter, '^%s*(.-)%s*$')
-	
-	if name == '' then
-		for _, key in ipairs(unitscan.sorted_targets()) do
-			unitscan.print(key)
-		end
-	else
-		unitscan.toggle_target(name)
-	end
+    parameter = parameter or ""
+    local trimmed = string.gsub(parameter, "^%s*(.-)%s*$", "%1")
+    
+    -- Show help if the parameter is "help" or "?"
+    if trimmed == "help" or trimmed == "?" then
+        unitscan.print("Usage:")
+        unitscan.print("  /unitscan NAME        to add scanning for that target")
+        unitscan.print("  /unitscan NAME        again to remove scanning for that target")
+        unitscan.print("  /unitscan interval #  to change the scanning interval")
+        return
+    end
+
+    -- Parse the parameter into command and argument
+    local space = string.find(parameter, " ")
+    local cmd, arg
+    if space then
+        cmd = string.sub(parameter, 1, space - 1)
+        arg = string.sub(parameter, space + 1)
+    else
+        cmd = parameter
+        arg = ""
+    end
+    cmd = string.lower(cmd)
+    
+    -- Check for the interval command
+    if cmd == "interval" then
+        local new_interval = tonumber(arg)
+        if new_interval then
+            CHECK_INTERVAL = new_interval
+            unitscan.print("CHECK_INTERVAL set to " .. new_interval)
+        else
+            unitscan.print("Invalid interval value! Usage: /unitscan interval <seconds>")
+        end
+        return
+    end
+
+    -- Default functionality: toggle target scanning or list targets
+    if trimmed == "" then
+        for _, key in ipairs(unitscan.sorted_targets()) do
+            unitscan.print(key)
+        end
+    else
+        unitscan.toggle_target(trimmed)
+    end
 end
