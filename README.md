@@ -9,4 +9,7 @@ The alert is visually and acoustically an exact copy of the famous addOn *_NPCSc
 There are two commands:<br/>
 **/unitscan** lists the active scan targets<br/>
 **/unitscan name** adds/removes **name** to/from the scan targets<br/>
-When a target is detected it is removed and has to be readded to continue scanning for it.
+added /unitscan help and /unitscan ?<br/>
+added /unitscan interval #           (can change in-game searching seconds)<br/>
+When a target is detected it is no longer removed useful for scarey patrols that sneak up on you!<br/>
+and this adddon is still usable by hunters for rare spawns I am just adding more use to it for other classes!
