@@ -14,4 +14,10 @@ There are 4* commands:<br/>
 added /unitscan help and /unitscan ?<br/>
 added /unitscan interval #           (can change in-game searching seconds)<br/>
 When a target is detected it is no longer removed useful for scarey patrols that sneak up on you!<br/>
+Reccomended scans/interval?<br/>
+/unitscan interval 15
+/unitscan Kurinnaxx<br/>
+/unitscan Crimson Courier<br/>
+/unitscan King Mosh<br/>
+/unitscan PVPNAMEHERE  For those pesky players that may camp you! >.<'<br/>
 and this adddon is still usable by hunters for rare spawns I am just adding more use to it for other classes!
