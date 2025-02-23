@@ -1,7 +1,7 @@
 # unitscan - WoW 1.12 addOn RENAME to: unitscan
 
 ![Alt text](http://i.imgur.com/d7TLkZm.png)
-![image](https://github.com/user-attachments/assets/097c8dd6-f786-49b6-8196-cce86e4b159a)
+![image](https://github.com/user-attachments/assets/097c8dd6-f786-49b6-8196-cce86e4b159a)<br/>
 WoW Dir \Interface\AddOns\unitscan<br/>
 This addOn automatically scans for any targetable units of your choice by name and alerts you upon finding one.<br/>
 Instead of the modern scanning methods which don't work for Vanilla it uses the API function *TargetByName* which was removed with TBC.
