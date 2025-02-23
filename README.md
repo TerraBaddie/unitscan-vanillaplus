@@ -15,7 +15,7 @@ added /unitscan help and /unitscan ?<br/>
 added /unitscan interval #           (can change in-game searching seconds)<br/>
 When a target is detected it is no longer removed useful for scarey patrols that sneak up on you!<br/>
 Reccomended scans/interval?<br/>
-/unitscan interval 15
+/unitscan interval 15<br/>
 /unitscan Kurinnaxx<br/>
 /unitscan Crimson Courier<br/>
 /unitscan King Mosh<br/>
