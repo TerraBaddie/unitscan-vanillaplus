@@ -1,4 +1,4 @@
-# unitscan - WoW 1.12 addOn 
+# unitscan - WoW 1.12 addOn RENAME to: unitscan
 
 ![Alt text](http://i.imgur.com/d7TLkZm.png)
 
@@ -6,7 +6,7 @@ This addOn automatically scans for any targetable units of your choice by name a
 
 The alert is visually and acoustically an exact copy of the famous addOn *_NPCScan* which first appeared during WotLK.
 
-There are two commands:<br/>
+There are 4* commands:<br/>
 **/unitscan** lists the active scan targets<br/>
 **/unitscan name** adds/removes **name** to/from the scan targets<br/>
 added /unitscan help and /unitscan ?<br/>
